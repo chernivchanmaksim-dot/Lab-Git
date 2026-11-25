@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿
+#include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <string>
@@ -55,7 +56,8 @@ int main()
         vector<pair<double, double>> results;
 
         cout << fixed << setprecision(4);
-        cout << "\n x\t\t y\n";
+        cout << "\n=== UPDATED CALCULATION RESULTS ===\n";
+        cout << "X\t\tY\n";
         cout << "-------------------------\n";
 
         for (double x = a; x <= b + h * 1e-9; x += h)
@@ -71,9 +73,10 @@ int main()
 
         do
         {
-            cout << "\n1 - Save results to file";
-            cout << "\n2 - View saved results";
-            cout << "\n0 - Exit";
+            cout << "\n=== RESULTS MENU ===";
+            cout << "\n1 - Save calculation results";
+            cout << "\n2 - Display saved results";
+            cout << "\n0 - Close program";
             cout << "\nChoose an action: ";
 
             if (!(cin >> choice))
@@ -109,7 +112,7 @@ int main()
 
                 file.close();
 
-                cout << "Results saved to results.txt" << endl;
+                cout << "Results successfully saved to results.txt" << endl;
             }
             else if (choice == 2)
             {
@@ -123,7 +126,7 @@ int main()
                 {
                     string line;
 
-                    cout << "\nSaved results:\n";
+                    cout << "\nSaved calculation results:\n";
 
                     while (getline(file, line))
                     {
